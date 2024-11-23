@@ -5,8 +5,8 @@ function App() {
 
   return (
     <>
-      <img src="/fitech-logo.png" className="w-1/2 h-1/2" alt="" />
-      <h1 className="text-5xl">Fitech</h1>
+      <img src="/fitech-logo.png" className="w-[100px] h-[100px]" alt="" />
+      <h1 className="text-3xl font-black bg-primary">Fitech</h1>
     </>
   )
 }
