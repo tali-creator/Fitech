@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button, Brief } from "./button";
+
+
 export function Content({user}){
     return(
       <div id="scroll-bar" className="flex w-full space-x-4 overflow-x-scroll  scheme-dark">
