@@ -20,7 +20,7 @@
       "id": 1,
       "name": "Tali Nanzing ",
       "profession": "Front End Dev",
-      "image": ["/Screenshot_20241125-052854.png"],
+      "image": ["/Screenshot_20241125-052854.png", "/Screenshot_20241125-103755.png", "/Screenshot_20241125-103840.png", "/Screenshot_20241125-103923.png"],
       "skill":["HTML", "CSS", "JAVASCRIPT", "TAILWINDCSS", "SCSS"," REACT JS" ,"GIT"],
       "bio": "I'm a dedicated developer passionate about mastering web technologies and constantly improving my skills in JavaScript and React.js. I'm hands-on with building projects like websites etc, using tools like Tailwind CSS, and Vite. I enjoy solving real-world technical challenges on Ubuntu and exploring Web3 concepts while documenting my learning journey. With a strong focus on practical experience, I aim to grow as a developer through structured roadmaps and continuous learning."
     },
