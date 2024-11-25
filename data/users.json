@@ -1,0 +1,80 @@
+{
+  "user": [
+    {
+      "id": 3,
+      "name": "Team Fitech",
+      "profession": "Community",
+      "image": [
+        "/fitech-logo.png",
+        "/IMG_20240906_180738_377.jpg",
+        "/IMG_20240906_180739_681.jpg",
+        "/IMG_20240906_180740_584.jpg",
+        "/IMG_20240906_180822_868.jpg",
+        "/IMG_20240906_181840_700.jpg",
+        "/IMG_20240906_182119_537.jpg"
+      ],
+      "skill":["HTML", "CSS", "JAVASCRIPT", "TAILWINDCSS", "SCSS"," REACT JS" ,"GIT"],
+      "bio": "Fitech is a dynamic tech community at the forefront of innovation, bridging the gap between Web3 technologies and traditional tech sectors. We bring together developers, enthusiasts, and professionals from all aspects of the tech world, including blockchain, AI, cybersecurity, and software engineering. Fitech fosters collaboration, knowledge sharing, and growth, creating an inclusive environment for anyone passionate about technology’s potential to shape the future. Whether it's decentralized applications or cutting-edge digital solutions, Fitech is where ideas thrive and the next generation of tech leaders come to connect.."
+    },
+    {
+      "id": 1,
+      "name": "Tali Nanzing ",
+      "profession": "Front End Dev",
+      "image": ["/Screenshot_20241125-052854.png"],
+      "skill":["HTML", "CSS", "JAVASCRIPT", "TAILWINDCSS", "SCSS"," REACT JS" ,"GIT"],
+      "bio": "I'm a dedicated developer passionate about mastering web technologies and constantly improving my skills in JavaScript and React.js. I'm hands-on with building projects like websites etc, using tools like Tailwind CSS, and Vite. I enjoy solving real-world technical challenges on Ubuntu and exploring Web3 concepts while documenting my learning journey. With a strong focus on practical experience, I aim to grow as a developer through structured roadmaps and continuous learning."
+    },
+    {
+      "id": 2,
+      "name": "Taibat Olayinka",
+      "profession": "Front End Dev",
+      "image": ["/taibat.jpeg"],
+      "skill":["HTML", "CSS", "JAVASCRIPT", "TAILWINDCSS", "SCSS"," REACT JS" ,"GIT"],
+      "bio": "I'm a tech enthusiast passionate about front-end development, graphic design, and product management. I bring ideas to life from concept to execution through visual storytelling. I'm passionate about web development and always looking for new challenges. I focus on creating responsive, accessible designs with fast performance and modern interactivity, turning ambitious ideas into reality"
+    },
+    {
+      "id": 4,
+      "name": "Liam Wilson",
+      "profession": "Front End Dev",
+      "image": ["https://example.com/images/liam.jpg"],
+      "skill":["HTML", "CSS", "JAVASCRIPT", "TAILWINDCSS", "SCSS"," REACT JS" ,"GIT"],
+      "bio": " "
+    },
+    {
+      "id": 5,
+      "name": "Sophia Martinez",
+      "image": "https://example.com/images/sophia.jpg",
+      "bio": "A fitness enthusiast and yoga instructor."
+    },
+    {
+      "id": 6,
+      "name": "James Anderson",
+      "image": "https://example.com/images/james.jpg",
+      "bio": "A travel blogger who loves exploring hidden gems around the world."
+    },
+    {
+      "id": 7,
+      "name": "Olivia Thomas",
+      "image": "https://example.com/images/olivia.jpg",
+      "bio": "A chef specializing in vegan and gluten-free recipes."
+    },
+    {
+      "id": 8,
+      "name": "Noah Moore",
+      "image": "https://example.com/images/noah.jpg",
+      "bio": "A tech enthusiast and gamer who reviews the latest gadgets."
+    },
+    {
+      "id": 9,
+      "name": "Ava Taylor",
+      "image": "https://example.com/images/ava.jpg",
+      "bio": "A wildlife conservationist working to protect endangered species."
+    },
+    {
+      "id": 10,
+      "name": "Ethan Harris",
+      "image": "https://example.com/images/ethan.jpg",
+      "bio": "A writer and poet who finds inspiration in everyday life."
+    }
+  ]
+}

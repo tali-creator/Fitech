@@ -11,5 +11,17 @@
   --color-secondary: rgba(118, 119, 153, 1);
   --color-tertiary: rgba(194, 56, 147, 1);
 
-  /* ... */
+  --scrollbar-width: none; /*  */
+  --scrollbar-display: none;
+}
+
+#scroll-bar{
+  scrollbar-width: none;
+
+}
+.scroll-bar{
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
