@@ -4,7 +4,9 @@ import { Button, Brief } from "./button";
 
 export function Content({user}){
     return(
+      
       <div id="scroll-bar" className="flex w-full space-x-4 overflow-x-scroll  scheme-dark">
+       
         {
           user.map((u) => (
             <div key={u.id} className="w-full cursor-pointer min-w-[160px]  sm:min-w-[200px] md:min-w-[320px] lg:min-w-[420px] space-x-3 rounded-3xl relative shadow-md">
