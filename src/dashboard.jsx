@@ -3,7 +3,6 @@ import Testimonies from "./tali/Testimonies";
 export default function Dashboard() {
   return (
     <div>
-      {/* Chuku obesd and Tali content goes under here */}
 
       {/* Aisha Kabir content goes under here */}
 
