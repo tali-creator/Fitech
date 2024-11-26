@@ -4,18 +4,14 @@ import Loading from "./leading";
 
 export default function Details() {
   const { id } = useParams();
-  const {
-    data: user,
-    isPending,
-    error,
-  } = useFetch(`http://localhost:8080/user/${id}`);
+  const { data: user,  isPending,  error, } = useFetch(`http://localhost:8080/user/${id}`);
   return (
-    <div>
+    <div className="">
       {isPending && <Loading />}
       {error && { error }}
       {user && (
-        <div className="w-full h-auto absolute bg-primary top-12 .z-10 left-0 p-5">
-          <div className="w-full md:max-w-1/2 md:mx-auto">
+        <div className="w-full h-auto absolute bg-primary top-12 .z-10 left-0 py-10 px-5">
+          <div className="w-full md:max-w-2/3 md:mx-auto">
             <div className="w-fit sm:w-full mx-auto flex flex-col sm:items-center sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
               <img
                 className="w-[250px] h-[250px] rounded-full"
