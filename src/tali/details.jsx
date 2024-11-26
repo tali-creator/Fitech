@@ -14,7 +14,7 @@ export default function Details() {
       {isPending && <Loading />}
       {error && { error }}
       {user && (
-        <div className="w-full h-auto absolute bg-primary top-0 left-0 p-5">
+        <div className="w-full h-auto absolute bg-primary top-12 .z-10 left-0 p-5">
           <div className="w-full md:max-w-1/2 md:mx-auto">
             <div className="w-fit sm:w-full mx-auto flex flex-col sm:items-center sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
               <img
