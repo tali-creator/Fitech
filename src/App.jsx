@@ -3,6 +3,7 @@ import "./App.css";
 import Details from "./tali/details";
 import Dashboard from "./dashboard";
 import NavBar from "./tali and obed/nav";
+import Footer from "./obed/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/user/:id" element={<Details />} />
         </Routes>
         {/*Chukwu Obed content goes under here */}
+        <Footer/>
       </div>
     </div>
   );

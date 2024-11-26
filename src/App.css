@@ -10,6 +10,8 @@
   --color-primary: rgba(18, 19, 42, 1);
   --color-secondary: rgba(118, 119, 153, 1);
   --color-tertiary: rgba(194, 56, 147, 1);
+  --color-footer-cl: #C23893;
+
 
   --scrollbar-width: none; /*  */
   --scrollbar-display: none;
