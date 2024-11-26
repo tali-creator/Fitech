@@ -11,6 +11,7 @@ function App() {
         {/* Tali and Chukwu obed code goes  under here */}
         <NavBar />
         <Routes>
+          {/* others should put their code in dashboard.jsx */}
           <Route path="/" element={<Dashboard />} />
           <Route path="/user/:id" element={<Details />} />
         </Routes>
