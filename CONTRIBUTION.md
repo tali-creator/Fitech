@@ -32,11 +32,11 @@ To contribute, start by forking the repository. This creates a personal copy whe
 
 ## Before you start working on any project or component do this:
 
-1. git checkout <enter-your-branch-name>: to create seperate branch to avoid conflict with the main.
+1. git checkout **enter-your-branch-name**: to create seperate branch to avoid conflict with the main.
 2. git pull: to make sure your are up to date
 3. git add .: To stage your changess
 4. git commit -m "commit message": to commit your change
-5. git push origin <your-branch-name>: to push your changes
+5. git push origin **your-branch-name**: to push your changes
 
 After all the now go th your Github to create a pull-request
 and for merge
