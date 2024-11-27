@@ -27,8 +27,7 @@ To contribute, start by forking the repository. This creates a personal copy whe
 ## After all any of this ways you run this command to start
 
 1. npm install: To install all node_modules
-2. npm run server: To start the json-server for data's
-3. npm run dev: To start you dev server.
+2. npm run dev: To start you dev server.
 
 ## Before you start working on any project or component do this:
 
