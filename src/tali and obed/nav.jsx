@@ -7,7 +7,6 @@ export default function NavBar(){
             <Logo />
             <div className=""> 
             <Links />
-
             </div>
         </div>
     )
