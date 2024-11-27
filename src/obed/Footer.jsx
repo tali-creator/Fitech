@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Footer() {
-  const url = "http://localhost:8000/menu";
+  const url = "http://localhost:8080/menu";
   const [navData, setNaveData] = useState([]);
   useEffect(() => {
     const FetchData = async () => {
