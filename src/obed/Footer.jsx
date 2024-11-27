@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Footer() {
-  const url = "http://localhost:8080/menu";
+  const url = "https://obed-smart.github.io/Fitech-Data/data.json";
   const [navData, setNaveData] = useState([]);
   useEffect(() => {
     const FetchData = async () => {
@@ -11,7 +11,7 @@ function Footer() {
           throw new Error("failed to fetch Data");
         }
         const data = await response.json();
-        setNaveData(data);
+        setNaveData(data.menu);
       } catch (error) {
         console.error(error);
         
