@@ -2,15 +2,30 @@ import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 import Loading from "./leading";
 
+
 export default function Details() {
-  const { id } = useParams();
-  const { data: user,  isPending,  error, } = useFetch(`http://localhost:8080/user/${id}`);
+  const { id } = useParams(); // Get id from URL
+  const url = "https://fitech-data.vercel.app/data.json"; // API URL
+  const { data, isPending, error } = useFetch(url);
+
+  if (isPending) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!data || !data.user) return <p>No data found</p>;
+
+  // Find the specific user by ID
+  const user = data.user.find((u) => u.id === Number(id)); // Convert id to number if needed
+
+  if (!user) return <p>No user found with ID: {id}</p>;
+  
+  
+ 
   return (
     <div className="">
       {isPending && <Loading />}
       {error && { error }}
-      {user && (
-        <div className="w-full h-auto absolute bg-primary top-12 .z-10 left-0 py-10 px-5">
+      {user && 
+
+        <div key={user.id} className="w-full h-auto absolute bg-primary top-12 .z-10 left-0 py-10 px-5">
           <div className="w-full md:max-w-2/3 md:mx-auto">
             <div className="w-fit sm:w-full mx-auto flex flex-col sm:items-center sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
               <img
@@ -46,7 +61,7 @@ export default function Details() {
             </div>
           </div>
         </div>
-      )}:
+}
     </div>
   );
 }
