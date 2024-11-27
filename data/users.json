@@ -109,5 +109,67 @@
         "GIT"
       ]
     }
+  ],
+  "menu": [
+    {
+      "category": "Product",
+      "items": [
+        { "name": "Product", "url": "/product" },
+        { "name": "Overview", "url": "/overview" },
+        { "name": "Features", "url": "/features" },
+        { "name": "Solutions", "url": "/solutions" },
+        { "name": "Tutorials", "url": "/tutorials" },
+        { "name": "Pricing", "url": "/pricing" },
+        { "name": "Release", "url": "/release" }
+      ]
+    },
+    {
+      "category": "Company",
+      "items": [
+        { "name": "Company", "url": "/company" },
+        { "name": "About us", "url": "/about-us" },
+        { "name": "Careers", "url": "/careers" },
+        { "name": "Press", "url": "/press" },
+        { "name": "News", "url": "/news" },
+        { "name": "Medis kit", "url": "/medis-kit" },
+        { "name": "Contact", "url": "/contact" }
+      ]
+    },
+    {
+      "category": "Resources",
+      "items": [
+        { "name": "Resources", "url": "/resources" },
+        { "name": "Blog", "url": "/blog" },
+        { "name": "Newsletter", "url": "/newsletter" },
+        { "name": "Event", "url": "/event" },
+        { "name": "Help center", "url": "/help-center" },
+        { "name": "Tutorials", "url": "/resources/tutorials" },
+        { "name": "Support", "url": "/support" }
+      ]
+    },
+    {
+      "category": "Social",
+      "items": [
+        { "name": "Social", "url": "/social" },
+        { "name": "Twitter", "url": "https://twitter.com" },
+        { "name": "LinkedIn", "url": "https://linkedin.com" },
+        { "name": "Facebook", "url": "https://facebook.com" },
+        { "name": "GitHub", "url": "https://github.com" },
+        { "name": "AngelList", "url": "https://angel.co" },
+        { "name": "Dribble", "url": "https://dribbble.com" }
+      ]
+    },
+    {
+      "category": "Legal",
+      "items": [
+        { "name": "Legal", "url": "/legal" },
+        { "name": "Terms", "url": "/terms" },
+        { "name": "Privacy", "url": "/privacy" },
+        { "name": "Cookies", "url": "/cookies" },
+        { "name": "Licenses", "url": "/licenses" },
+        { "name": "Settings", "url": "/settings" },
+        { "name": "Contact", "url": "/legal/contact" }
+      ]
+    }
   ]
 }

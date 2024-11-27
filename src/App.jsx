@@ -23,8 +23,8 @@ function App() {
           <Route  path="/user/:id" element={<Details />} />
         </Routes>
         {/*Chukwu Obed content goes under here */}
-        <Footer/>
       </div>
+        <Footer/>
     </div>
   );
 }
