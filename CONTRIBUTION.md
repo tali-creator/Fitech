@@ -1,4 +1,4 @@
-# Contributing to [Project Name]
+# Contributing to [Fitech]
 
 We welcome contributions to [Fitech] and appreciate your efforts in working together as a team to learn and improve our knowledge
 
