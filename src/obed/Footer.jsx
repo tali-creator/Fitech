@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Footer() {
-  const url = "https://obed-smart.github.io/Fitech-Data/data.json";
+  const url = "https://fitech-data.vercel.app/data.json";
   const [navData, setNaveData] = useState([]);
   useEffect(() => {
     const FetchData = async () => {
