@@ -6,6 +6,8 @@ import NavBar from "./tali and obed/nav";
 import About from "./tali and obed/navigations/about";
 import Service from "./tali and obed/navigations/service";
 import Events from "./tali and obed/navigations/event";
+import LoginPage from "./tali and obed/navigations/login";
+import SignInPage from "./tali and obed/navigations/signin";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/service" element={<Service />} />
           <Route exact path="/event" element={<Events />} />
+          <Route exact path="/login" element={<LoginPage />} />
+          <Route exact path="/signIn" element={<SignInPage />} />
           <Route  path="/user/:id" element={<Details />} />
         </Routes>
         {/*Chukwu Obed content goes under here */}

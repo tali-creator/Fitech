@@ -77,14 +77,15 @@ export default function Links() {
             Events
           </Link>
           <div className="flex space-x-4 justify-end w-full my-4">
-            <Button button={"Login"} />
-            <Button button={"Sign in"} />
+          <Link onClick={handleClick} className="flex flex-none" to={"/login"}> <Button button={"Login"} /></Link>
+          <Link onClick={handleClick} className="flex flex-none" to={"/signIn"}> <Button button={"Sign in"} /></Link>
           </div>
-        </div>
-      </div>
-      <div className="hidden sm:flex flex-none space-x-2 pr-2">
-      <Button className="flex flex-none " button={"Login"} />        <Button className="flex flex-none " button={"Sign in"} />
-      </div>
-    </div>
+              </div>
+            </div>
+            <div className="hidden sm:flex flex-none space-x-2 pr-2">
+          <Link className="flex flex-none" to={"/login"}> <Button button={"Login"} /></Link>
+          <Link className="flex flex-none" to={"/signIn"}> <Button button={"Sign in"} /></Link>
+            </div>
+          </div>
   );
 }
