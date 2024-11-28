@@ -2,7 +2,7 @@ import Testimonies from "./tali/Testimonies";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="pt-20">
 
       {/* Aisha Kabir content goes under here */}
 
