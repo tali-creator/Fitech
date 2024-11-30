@@ -1,40 +1,147 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function SignInPage() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+
+  const [passwordError, setPasswordError] = useState("")
+  const [ageError, setAgeError] = useState("")
+  const [firstNameError, setFirstNameError] = useState('')
+  const [lastNameError, setLastNameError] = useState("")
+  const [genderError, setGenderError] = useState("")
+  const [emailError, setEmailError ] = useState("")
+  const [confirmPasswordError, setConfirmPasswordError] = useState("")
+
+  const validateFirstName = () => {
+    if(!firstName.trim()){
+      setFirstNameError("Enter a valid first name")
+    }else{
+      setFirstNameError("")
+    }
+  }
+
+  const validateLastName = () => {
+    if(!lastName.trim()){
+      setLastNameError("Enter a valid last name")
+    }else{
+      setLastNameError('')
+    }
+  }
+
+  const validateAge = () => {
+    if(!age.trim()){
+      setAgeError("Enter a valid Age")
+    }else if( age == isNaN){
+      setAgeError("Age must be a number")
+    }
+    else{
+      setAgeError("")
+    }
+  }
+
+  const validateGender = () => {
+    if(!gender){
+      setGenderError("Choose a Gender")
+    }else{
+      setGenderError('')
+    }
+  }
+
+  const validateEmail = () => {
+    const regex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/";
+    if(!email.trim()){
+      setEmailError("Email is required")
+    } else if (!regex ) {
+      setEmailError("Please enter a valid Email") 
+    }else{
+      setEmailError('')
+    }
+      
+  }
+
+  const validatePassword = () => {
+    if(password.length < 8){
+      setPasswordError("password must not be less than 8 characters ")
+    }else{
+      setPasswordError("")
+    }
+  }
+
+  const validateConfirmPassword = () => {
+    if(confirmPassword !== password){
+      setConfirmPasswordError("passwords do not match")
+    }else{
+      setConfirmPasswordError("")
+    }
+  }
+  function validate(e) {
+    e.preventDefault();
+    validateAge();
+    validateFirstName();
+    validateEmail();
+    validateGender();
+    validateLastName();
+    validateConfirmPassword();
+    validatePassword();
+
+    if(!ageError() && !firstNameError() &&  !emailError() && !genderError() &&  !lastNameError() && !confirmPasswordError() && !passwordError()){
+        alert("form submitted successfully")
+      }
+    
+  }
+  useEffect(() => {}, []);
   return (
     <div className="w-full h-auto bg-primary pt-20">
       <div className="flex justify-center ">
         <h1 className="text-white font-black text-3xl flex">
-          Sign In to{" "}
-          <img className="w-10 h-10 mx-2" src="/fitech-logo.png" alt="" />{" "}
+          Sign In to
+          <img className="w-10 h-10 mx-2" src="/fitech-logo.png" alt="" />
           Fitech
         </h1>
       </div>
       <div className="w-full h-auto flex justify-center items-center">
-        <div className="w-full sm:w-4/5  lg:w-2/3 shadow-sm shadow-black lg:px-[70px] xl:px-[120px] px-4 py-6 rounded-md h-auto">
-          <form action="" className="w-full h-full space-y-4">
+        <div className="w-full sm:w-4/5  lg:w-2/3 shadow-sm shadow-black lg:px-[70px] xl:px-[170px] px-4 py-6 rounded-md h-auto">
+          <form
+            onSubmit={validate}
+            action=""
+            className="w-full h-full space-y-4">
             <div className="flex flex-col sm:flex-row justify-between">
               <div className="flex flex-col  space-y-1">
                 <label className="text-white " htmlFor="fname">
                   First Name:
                 </label>
                 <input
+                  onBlur={validateFirstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                   className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
                   type="fname"
                   name=""
                   id="fname   required"
+                  value={firstName}
                 />
+                <span className="text-sm text-red-700 italic pb-2">{firstNameError}</span>
               </div>
               <div className="flex flex-col space-y-1">
                 <label className="text-white " htmlFor="lname">
                   Last Name:
                 </label>
                 <input
+                  onBlur={validateLastName}
+                  onChange={(e) => setLastName(e.target.value)}
                   className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
                   type="lname"
                   name=""
                   id="lname   required"
+                  value={lastName}
                 />
+                <span className="text-sm text-red-700 italic pb-2">{lastNameError}</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row justify-between">
@@ -43,22 +150,32 @@ export default function SignInPage() {
                   Email Adress:
                 </label>
                 <input
+                onBlur={validateEmail}
+                  onChange={(e) => setEmail(e.target.value)}
                   className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
                   type="email"
                   name=""
                   id="email   required"
+                  value={email}
                 />
+                <span className="text-sm text-red-700 italic pb-2">{emailError}</span>
+
               </div>
               <div className="flex flex-col space-y-1">
                 <label className="text-white " htmlFor="age">
                   Age:
                 </label>
                 <input
+                onBlur={validateAge}
+                  onChange={(e) => setAge(e.target.value)}
                   className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
                   type="number"
                   name=""
                   id="age   required"
+                  value={age}
                 />
+                <span className="text-sm text-red-700 italic pb-2">{ageError}</span>
+
               </div>
             </div>
             <div className="flex space-x-2 items-center ">
@@ -67,45 +184,62 @@ export default function SignInPage() {
                 Male
               </label>
               <input
+              onBlur={validateGender}
+              onChange={(e) => setGender(e.target.value)}
                 className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
                 type="radio"
-                value="female"
+                value="male"
                 name="male/female"
                 id="   required"
               />
+
               <label className="text-white " htmlFor="female">
                 Female
               </label>
               <input
+              onChange={(e) => setGender(e.target.value)}
                 className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
                 type="radio"
                 name="male/female"
-                value="male"
+                value="female"
                 id="   required"
               />
+
+            <span className="text-sm text-red-700 italic pb-2">{genderError}</span>
             </div>
+
             <div className="flex flex-col sm:flex-row justify-between">
               <div className="flex flex-col space-y-1">
                 <label className="text-white " htmlFor="password">
                   Password:
                 </label>
                 <input
+                onBlur={validatePassword}
+                  onChange={(e) => setPassword(e.target.value)}
                   className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
                   type="password"
                   name=""
                   id="password   required"
+                  value={password}
                 />
+                <span className="text-sm text-red-700 italic pb-2">{passwordError}</span>
+
               </div>
               <div className="flex flex-col space-y-1">
                 <label className="text-white " htmlFor="ConfirmPassword">
                   Confirm Password:
                 </label>
                 <input
+                onBlur={validateConfirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   className=" border-secondary px-3 outline-none bg-white rounded-md hover:border-tertiary border-2 transition ease-linear duration-200"
-                  type="ConfirmPassword"
+                  type="Password"
                   name=""
                   id="ConfirmPassword   required"
+                  value={confirmPassword}
                 />
+                <span className="text-sm text-red-700 italic pb-2">{confirmPasswordError}</span>
+
               </div>
             </div>
             <div className="flex items-center flex-col sm:flex-row justify-between">
@@ -143,10 +277,10 @@ export default function SignInPage() {
             </div>
           </form>
           <div className="text-white text-center my-2">
-            Already have an account?{" "}
+            Already have an account?
             <Link className="text-tertiary hover:underline" to={"/login"}>
               Login
-            </Link>{" "}
+            </Link>
             here
           </div>
         </div>
