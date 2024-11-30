@@ -13,18 +13,18 @@ export default function Links() {
   }
 
   return (
-    <div className="text-secondary flex space-x-3">
-      <div className="sm:flex space-x-3 hidden ">
-        <Link className=" hover:text-white" to="/">
+    <div className="text-secondary flex space-x-4 justify-center items-center">
+      <div className="sm:flex space-x-6 hidden text-xl">
+        <Link className=" transition-colors duration-300 hover:text-white" to="/">
           Home
         </Link>
-        <Link className=" hover:text-white" to="/about">
+        <Link className=" transition-colors duration-300 hover:text-white" to="/about">
           About
         </Link>
-        <Link className=" hover:text-white" to="/service">
+        <Link className=" transition-colors duration-300 hover:text-white" to="/service">
           Service
         </Link>
-        <Link className=" hover:text-white" to="/event">
+        <Link className=" transition-colors duration-300 hover:text-white" to="/event">
           Events
         </Link>
       </div>
@@ -39,18 +39,14 @@ export default function Links() {
         <div  className="w-full flex justify-end p-3 cursor-pointer ">
           <div style={{padding: toggle? "10px" : ""}} onClick={handleClick} className="space-y-1 sm:hidden w-fit">
             <div
-              style={{
-                display: toggle ? "none" : "block",
-                padding: toggle ? "-50px" : "0px",
-              }}
-              className="w-7 h-1 transition-all hover:bg-white duration-300 bg-secondary rounded"></div>
+             
+              className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "-rotate-45 translate-y-2"}`}></div>
             <div
-              style={{ transform: `${toggle ? 'translateX(-0px)' : 'translateX(0px)'} ${toggle ? 'rotate(45deg)' : 'rotate(0deg)'}`
-               }}
-              className="w-7 h-1 transition-all hover:bg-white duration-300 bg-secondary rounded"></div>
+              
+              className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "hidden"}`}></div>
             <div
-              style={{ transform: `${toggle ? 'translateY(-9px)' : 'translateX(0px)'} ${toggle ? 'rotate(-45deg)' : 'rotate(0deg)'}` }}
-              className="w-7 h-1 transition-all hover:bg-white duration-300 bg-secondary rounded"></div>
+             
+              className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "rotate-45"}`}></div>
           </div>
         </div>
         <div
@@ -82,8 +78,8 @@ export default function Links() {
           </div>
               </div>
             </div>
-            <div className="hidden sm:flex flex-none space-x-2 pr-2">
-          <Link className="flex flex-none" to={"/login"}> <Button button={"Login"} /></Link>
+            <div className="hidden sm:flex flex-none space-x-4 pr-2">
+          <Link className="flex flex-none " to={"/login"}> <Button button={"Login"} /></Link>
           <Link className="flex flex-none" to={"/signIn"}> <Button button={"Sign in"} /></Link>
             </div>
           </div>
