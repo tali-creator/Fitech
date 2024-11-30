@@ -3,12 +3,10 @@ import Loading from "../../tali/leading";
 import { useState } from "react";
 export default function Events() {
   const {
-    data: user,
+    data,
     isPending,
     error,
-  } = useFetch("http://localhost:8080/user/1");
-  console.log(user);
-
+  } = useFetch("https://fitech-data.vercel.app/data.json");
   const { viewImg, setViewImg } = useState(true);
   function toggle() {
     if (viewImg) {
@@ -17,6 +15,16 @@ export default function Events() {
       setViewImg(false);
     }
   }
+  console.log(data);
+  if (isPending) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!data || !data.user) return <p>No data found</p>;
+
+  // Find the specific user by ID
+  const user = data.user.find((u) => u.id === Number(1)); // Convert id to number if needed
+
+
+  
   return (
     <div className="mt-20 border-2 p-5">
       <div>

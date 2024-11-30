@@ -10,7 +10,7 @@ export default function Testimonies() {
   return (
     <>
       <div>
-        {user &&  <div className="w-full flex flex-col lg:px-20  items-center py-10 space-y-10">
+        {user &&  <div className="w-full flex flex-col items-center py-10 space-y-10">
           <div className="flex space-x-6 sm:space-x-8 md:space-x-10 ">
             <img className="w-5 sm:w-7 md:w-10 lg:w-full" src="/qoute2.svg" alt="" />
             <h1 className="text-2xl pt-5 sm:pt-8 md:pt-12 font-bold font-serif sm:text-4xl md:text-6xl lg:text-7xl text-white">

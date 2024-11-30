@@ -11,7 +11,7 @@ export default function SignInPage() {
         </h1>
       </div>
       <div className="w-full h-auto flex justify-center items-center">
-        <div className="w-full sm:w-4/5  lg:w-2/3 shadow-sm shadow-black px-4 py-6 rounded-md h-auto">
+        <div className="w-full sm:w-4/5  lg:w-2/3 shadow-sm shadow-black lg:px-[70px] xl:px-[120px] px-4 py-6 rounded-md h-auto">
           <form action="" className="w-full h-full space-y-4">
             <div className="flex flex-col sm:flex-row justify-between">
               <div className="flex flex-col  space-y-1">

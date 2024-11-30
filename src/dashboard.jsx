@@ -2,7 +2,7 @@ import Testimonies from "./tali/Testimonies";
 import Map from "./Shammah David/Team";
 export default function Dashboard() {
   return (
-    <div>
+    <div className="pt-20">
 
       {/* Aisha Kabir content goes under here */}
 
