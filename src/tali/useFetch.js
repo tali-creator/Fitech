@@ -18,26 +18,46 @@ export default function useFetch(url) {
     // fetching the data and also catching errors
     //loading message
     // handling error incase of emergency abort
-    fetch(url,  { signal: abortController.signal })
-      .then(res => {
+    async () => {
+      try {
+        const res = await fetch(url, abortController.signal);
         if (!res.ok) {
           throw Error("cant Fetch Data")
-        }
-        return res.json()
-      })
-      .then(data => {
+        } 
+        const data = await res.json()
         setData(data)
         setIsPending(false)
         setError(null)
-      })
-      .catch((err) => {
+      }
+      catch (err){
         if (err.name === "AbortError") {
           console.log("Fetch aborted");
         } else {
           setIsPending(false);
           setError(err.message);
         }
-      });
+      }
+    }
+    // fetch(url,  { signal: abortController.signal })
+    //   .then(res => {
+    //     if (!res.ok) {
+    //       throw Error("cant Fetch Data")
+    //     }
+    //     return res.json()
+    //   })
+    //   .then(data => {
+    //     setData(data)
+    //     setIsPending(false)
+    //     setError(null)
+    //   })
+    //   .catch((err) => {
+    //     if (err.name === "AbortError") {
+    //       console.log("Fetch aborted");
+    //     } else {
+    //       setIsPending(false);
+    //       setError(err.message);
+    //     }
+    //   });
 //retuening abort controller
     return () => abortController.abort();
 
