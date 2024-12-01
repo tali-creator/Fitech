@@ -1,17 +1,19 @@
 export default function Premium () {
     return (
         <div>
-                <section className="bg-gradient-to-b from-[#0a0b2a] to-[#101533] text-white py-10 px-5 md:px-20 lg:px-32">
+                <section className="bg-primary text-white py-10 px-5 md:px-20 lg:px-32">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
         {/* Left: Image */}
         <div className="flex-1 mb-10 lg:mb-0">
           <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-800 to-blue-600 rounded-xl blur-lg"></div>
+            <div className="w-fit rounded-4xl shadow-[10px 10px 10px 10px] shadow-blue-400">
             <img
-              src="/iphone.png"
+              src="/iPhone.png"
               alt="phone image"
               className="relative z-10 rounded-xl shadow-lg"
             />
+            </div>
+            
           </div>
         </div>
 
