@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function SignInPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [isLoader, setLoader] = useState(false);
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -117,8 +119,12 @@ export default function SignInPage() {
         // set a message to indicate user had and account
         setUserMessage("User with this email already exist. please login");
         setTimeout(() => {
-          navigate("/login");
-        },2000);
+          setLoader(true);
+          setTimeout(() => {
+            setLoader(false);
+            navigate("/login");
+          }, 1200);
+        }, 1000);
         return;
       }
 
@@ -200,8 +206,8 @@ export default function SignInPage() {
           Fitech
         </h1>
       </div>
-      <div className="w-full h-auto flex justify-center items-center">
-        <div className="w-full sm:w-4/5  lg:w-2/3 shadow-[0px_0px_3px_rgba(225,225,225,0.7)] mt-5 lg:px-[70px] xl:px-[170px] px-4 py-6 rounded-md h-auto">
+      <div className="w-full h-auto flex  justify-center items-center">
+        <div className="w-full sm:w-4/5 relative lg:w-2/3 shadow-[0px_0px_3px_rgba(225,225,225,0.7)] mt-5 lg:px-[70px] xl:px-[170px] px-4 py-6 rounded-md h-auto">
           <form
             onSubmit={validate}
             action=""
@@ -405,6 +411,7 @@ export default function SignInPage() {
             </Link>
             here
           </div>
+          {isLoader && <Loader />}
         </div>
       </div>
     </div>
