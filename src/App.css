@@ -10,6 +10,8 @@
   --color-tertiary: rgba(194, 56, 147, 1);
   --color-footer-cl: #c23893;
 
+  --breakpoint-2lg: 1026px;
+
   --scrollbar-width: none; /*  */
   --scrollbar-display: none;
 }

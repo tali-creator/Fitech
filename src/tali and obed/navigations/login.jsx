@@ -40,13 +40,13 @@ export default function LoginPage() {
         }
       } else {
         setUserMessage("Account not found. please sign up ");
-        setTimeout(() => {
-          setLoader(true);
-          setTimeout(() => {
-            setLoader(false);
-            navigate("/signin");
-          }, 1200);
-        }, 1000);
+        // setTimeout(() => {
+        //   setLoader(true);
+        //   setTimeout(() => {
+        //     setLoader(false);
+        //     navigate("/signin");
+        //   }, 1200);
+        // }, 1000);
         return;
       }
 
@@ -126,9 +126,10 @@ export default function LoginPage() {
                 disabled={loading}
                 type="submit"
                 className={`bg-tertiary px-10 font-black rounded-lg text-[#FFFFFF] hover:bg-secondary hover:text-tertiary hover:border-tertiary border-2 transition ease-linear duration-200 text-lg
-                ${loading && "opacity-80 cursor-not-allowed"}`}
+                ${loading && ""}`}
               >
-                {loading ? "Loging..." : "Login"}
+                {loading ? `Loging...` : "Login"}
+                {loading && <Loader />}
               </button>
             </div>
           </form>
@@ -172,7 +173,6 @@ export default function LoginPage() {
               </div>
             </div>
           </div>
-          {isLoader && <Loader />}
         </div>
       </div>
     </div>

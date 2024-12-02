@@ -22,8 +22,10 @@ function Footer() {
   return (
     <footer className="w-full h-full  bg-[#FFFFFF]">
       <nav className="max-w-[1300px]  mx-auto  gap-y-8 lg:gap-0 p-3 md:p-2  content-center grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))]   my-10">
+        {/* loop Through the data to create ul for each group  */}
         {navData.map((navList, listIndex) => (
           <ul key={listIndex} className="space-y-2  sm:ml-20">
+            {/* loop Through each group to create a li */}
             {navList.items.map((item, index) => (
               <li
                 key={index}
