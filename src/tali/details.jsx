@@ -8,6 +8,8 @@ export default function Details() {
   const url = "https://fitech-data.vercel.app/data.json"; // API URL
   const { data, isPending, error } = useFetch(url);
 
+  console.log(data)
+
   if (isPending) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!data || !data.user) return <p>No data found</p>;
@@ -16,7 +18,6 @@ export default function Details() {
   const user = data.user.find((u) => u.id === Number(id)); // Convert id to number if needed
 
   if (!user) return <p>No user found with ID: {id}</p>;
-  
   
  
   return (

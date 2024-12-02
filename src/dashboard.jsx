@@ -1,6 +1,9 @@
 import Testimonies from "./tali/Testimonies";
 import Map from "./Shammah David/Team";
+
 import UserCentric from "./Jayteemoney/userCentric";
+
+import Premium from "./Taibat/premium";
 export default function Dashboard() {
   return (
     <div className="pt-20">
@@ -10,6 +13,7 @@ export default function Dashboard() {
       {/* Ruben Luka content goes under here */}
 
       {/* Taibat Olayinka content under goes here */}
+      <Premium />
 
       {/* Rufai Usman content goes under here */}
 
