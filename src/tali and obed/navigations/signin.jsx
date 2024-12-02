@@ -118,13 +118,13 @@ export default function SignInPage() {
       if (userExist) {
         // set a message to indicate user had and account
         setUserMessage("User with this email already exist. please login");
-        setTimeout(() => {
-          setLoader(true);
-          setTimeout(() => {
-            setLoader(false);
-            navigate("/login");
-          }, 1200);
-        }, 1000);
+        // setTimeout(() => {
+        //   setLoader(true);
+        //   setTimeout(() => {
+        //     setLoader(false);
+        //     navigate("/login");
+        //   }, 1200);
+        // }, 1000);
         return;
       }
 
@@ -374,6 +374,7 @@ export default function SignInPage() {
                   }`}
                 >
                   {loading ? "submitting..." : "Sign Up"}
+                  {loading && <Loader />}
                 </button>
               </div>
               <div className="w-full space-x-2 space-y-2">

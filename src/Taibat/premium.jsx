@@ -4,8 +4,8 @@ export default function Premium() {
       <section className=" text-white  py-10 px-5 md:px-20 lg:px-20">
         <div className="max-w-7xl mx-auto lg:gap-8 flex flex-col lg:flex-row items-center">
           {/* Left: Image */}
-          <div className="flex-1 relative mb-10 lg:mb-0 ">
-            <div className=" flex justify-center">
+          <div className="flex-1  w-full relative  mb-10 lg:mb-0 ">
+            <div className=" flex   justify-center">
               <div className="w-fit  rounded-4xl shadow-[10px 10px 10px 10px] shadow-blue-400">
                 <img
                   src="/iPhone.png"
@@ -14,17 +14,23 @@ export default function Premium() {
                 />
               </div>
               {/* ellipse borders */}
-              
-              {/* <div className="">
+
+              <div className="">
                 <div
-                  className="w-[340px] h-[550px]  -top-16 -left-10 rotate-130 border-[2px] transform translate-x-[50%]
-                border-[hsla(0,0%,100,1)] rounded-[50%] absolute"
+                  className="w-[13rem] md:w-[20rem] lg:w-[22rem] lg:h-[32rem] md:h-[30rem] h-[23rem] rotate-130 transform rounded-[50%] left-[50%] top-[40%] -translate-y-[50%] -translate-x-[50%]  border-[2px]
+                border-[hsla(0,0%,100,1)]  absolute"
                 ></div>
 
-                <div className="w-[340px] h-[550px] -top-8  -left-12 rotate-130 transform translate-x-[50%] border-[2px] border-[hsla(0,0%,100,1)]  rounded-[50%] absolute"></div>
+                <div className="w-[13rem] h-[23rem] lg:w-[22rem] lg:h-[32rem] md:w-[20rem] md:h-[30rem] rotate-130 rounded-[50%] left-[50%] top-[50%] -translate-y-[50%] -translate-x-[50%] border-[hsla(0,0%,100,1)] border-[2px] absolute"></div>
 
-                <div className="w-[30px] h-[550px] top-4 -left-18 rotate-130 transform translate-x-[50%] border-[2px] border-[hsla(0,0%,100,1)]  rounded-[50%] absolute"></div>
-              </div> */}
+                <div className="w-[13rem] h-[23rem] lg:w-[22rem] lg:h-[32rem] md:w-[20rem] md:h-[30rem] rotate-130 rounded-[50%] left-[50%] top-[60%] -translate-y-[50%] -translate-x-[50%] border-[2px] border-[hsla(0,0%,100,1)]   absolute"></div>
+
+                <img
+                  src="/taibat-Ellipse.png"
+                  alt=""
+                  className="absolute -z-0 rotate-180 -translate-x-[50%] -translate-y-[50%] top-[50%] left-[30%] shadow-[-10px_0px_0px_rgba(18,19,42,0.2)] md:w-[35rem] md:left-[40%]  w-[28rem]  object-fit aspect-square "
+                />
+              </div>
             </div>
           </div>
 
