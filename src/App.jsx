@@ -12,7 +12,7 @@ import SignInPage from "./tali and obed/navigations/signin";
 
 function App() {
   return (
-    <div className="w-full h-auto ">
+    <div className="w-full h-auto font-show ">
       <div className="w-full py-5 px-5 md:px-16 bg-primary mx-auto h-full">
         {/* Tali and Chukwu obed code goes  under here */}
         <NavBar />
