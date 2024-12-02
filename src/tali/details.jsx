@@ -4,18 +4,16 @@ import Loading from "./leading";
 
 
 export default function Details() {
-  const { id } = useParams(); // Get id from URL
-  const url = "https://fitech-data.vercel.app/data.json"; // API URL
+  const { id } = useParams(); 
+  const url = "https://fitech-data.vercel.app/data.json";
   const { data, isPending, error } = useFetch(url);
 
   console.log(data)
 
-  if (isPending) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
   if (!data || !data.user) return <p>No data found</p>;
 
-  // Find the specific user by ID
-  const user = data.user.find((u) => u.id === Number(id)); // Convert id to number if needed
+ 
+  const user = data.user.find((u) => u.id === Number(id));
 
   if (!user) return <p>No user found with ID: {id}</p>;
   
@@ -26,11 +24,11 @@ export default function Details() {
       {error && { error }}
       {user && 
 
-        <div key={user.id} className="w-full h-auto absolute bg-primary top-12 .z-10 left-0 py-10 px-5">
+        <div key={user.id} className="w-full h-auto  bg-primary py-15 px-5">
           <div className="w-full md:max-w-2/3 md:mx-auto">
             <div className="w-fit sm:w-full mx-auto flex flex-col sm:items-center sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
               <img
-                className="w-[250px] h-[250px] rounded-full"
+                className="w-[250px] h-[250px] rounded-full bg-cover"
                 src={user.image[0]}
                 alt=""
               />
