@@ -82,7 +82,6 @@ export default function LoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
                 id="email"
                 required
               />
@@ -99,14 +98,13 @@ export default function LoginPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
                 id="password"
                 required
               />
             </div>
             <Link
               to={"/recovery"}
-              className="text-[#FFFFFF] text-xl hover:underline"
+              className="text-white text-xl hover:underline"
             >
               forgot password
             </Link>

@@ -9,10 +9,11 @@ import Service from "./tali and obed/navigations/service";
 import Events from "./tali and obed/navigations/event";
 import LoginPage from "./tali and obed/navigations/login";
 import SignInPage from "./tali and obed/navigations/signin";
+import Recovery from "./tali and obed/navigations/recovery";
 
 function App() {
   return (
-    <div className="w-full h-auto ">
+    <div className="w-full h-auto font-serif">
       <div className="w-full py-5 px-5 flex flex-col md:px-16 bg-primary mx-auto h-full">
         <div>
           {/* Tali and Chukwu obed code goes  under here */}
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/service" element={<Service />} />
             <Route exact path="/event" element={<Events />} />
             <Route exact path="/login" element={<LoginPage />} />
+            <Route exact path="/recovery" element={<Recovery />} />
             <Route exact path="/signIn" element={<SignInPage />} />
             <Route path="/user/:id" element={<Details />} />
           </Routes>

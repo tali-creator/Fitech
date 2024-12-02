@@ -9,7 +9,7 @@ export default function Testimonies() {
  
   if (!data || !data.user) return <p>No data found</p>;
   const user = data.user
-
+console.log(user)
   return (
     <>
       <div>
