@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import { Button, Brief } from "./button";
+import Loading from "./leading";
 
-export function Content({ user }) {
+export function Content({ user , isPending, error}) {
+  if (!user) return <p>No data found</p>;
   return (
     <div
       id="scroll-bar"
       className="flex w-full space-x-4 overflow-x-scroll  scheme-dark">
-      {user.map((u) => (
+        {isPending && <Loading />}
+        {error && <div className="text-white text-3xl "> Error Fetching Data</div>}
+      {user && user.map((u) => (
         <div
           key={u.id}
           className="w-full cursor-pointer min-w-[160px]  sm:min-w-[200px] md:min-w-[320px] lg:min-w-[420px] space-x-3 rounded-3xl relative shadow-md">

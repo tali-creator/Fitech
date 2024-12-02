@@ -4,8 +4,11 @@ import useFetch from "./useFetch";
 
 export default function Testimonies() {
   const url = "https://fitech-data.vercel.app/data.json";
-  const { data: user, isPending, error } = useFetch(url);
-  console.log();
+  
+  const { data, isPending, error } = useFetch(url);
+ 
+  if (!data || !data.user) return <p>No data found</p>;
+  const user = data.user
 
   return (
     <>
@@ -29,7 +32,7 @@ export default function Testimonies() {
           </div>
         )}
         {isPending && <Loading />}
-        {user && <Content user={user.user} />}
+        {user && <Content user={user}  isPending={isPending} error={error}/>}
       </div>
     </>
   );
