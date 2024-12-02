@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Satoshi", "sans-serif";
+  --font-show: "Poppins", "sans-serif";
 
   --breakpoint-3xl: 1920px;
 
@@ -67,3 +67,7 @@
     opacity: 1;
   }
 }
+
+/* *>*>*{
+  outline: 2px solid red;
+} */
