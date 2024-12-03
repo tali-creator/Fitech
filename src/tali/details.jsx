@@ -1,29 +1,29 @@
-import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
-import Loading from "./leading";
-
+import { useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 
 export default function Details() {
-  const { id } = useParams(); 
-  const url = "https://fitech-data.vercel.app/data.json";
-  const { data, isPending, error } = useFetch(url);
+  const { id } = useParams();
 
-  console.log(data)
+  // function to view image
+  const { selectedImage, setSelectedImage } = useState(null);
 
-  if (!data || !data.user) return <p>No data found</p>;
+  const viewImage = (im) => {
+    setSelectedImage(im);
+  };
 
- 
-  const user = data.user.find((u) => u.id === Number(id));
+  const closeImage = () => {
+    setSelectedImage(null);
+  };
+// function to view image ends
+
+  const details = useLoaderData();
+  const user = details.find((u) => u.id === Number(id));
 
   if (!user) return <p>No user found with ID: {id}</p>;
-  
- 
+
   return (
     <div className="">
-      {isPending && <Loading />}
-      {error && { error }}
-      {user && 
-
+      {user && (
         <div key={user.id} className="w-full h-auto  bg-primary py-15 px-5">
           <div className="w-full md:max-w-2/3 md:mx-auto">
             <div className="w-fit sm:w-full mx-auto flex flex-col sm:items-center sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
@@ -51,16 +51,47 @@ export default function Details() {
                 ))}
               </ul>
             </div>
-            <div className="image-slider-wrapper w-full flex overflow-x-scroll border-y-2  my-5">
-              <div className="image-slider ">
+            <div className="  w-full flex overflow-x-scroll border-y-2  my-5">
+              <div className="flex ">
                 {user.image.map((im, i) => (
-                  <img className="image-slide w-[120px]" key={i} src={im} />
+                  <img
+                    onClick={() => viewImage(im)}
+                    className=" w-[200px] h-[250px]"
+                    key={i}
+                    src={im}
+                  />
                 ))}
               </div>
             </div>
+            {selectedImage && (
+              <div  
+                className="fixed top-0 left-0 w-[100px] h-[100px] bg-[rbga(0,0,0,0.8) flex justify-center items-center z-90"
+                onClick={closeImage}>
+                <img
+                  src={selectedImage}
+                  className="full-image max-w-4/5 max-h-4/5"
+                  alt=""
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+            )}
           </div>
         </div>
-}
+      )}
     </div>
   );
 }
+
+export const userDetails = async () => {
+  try {
+    const res = await fetch("https://fitech-data.vercel.app/data.json");
+    if (!res.ok) {
+      throw Error("Failed To Fetch Data");
+    }
+    const data = await res.json();
+
+    return data.user;
+  } catch (error) {
+    console.log(error);
+  }
+};

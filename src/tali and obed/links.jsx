@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "./buttons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Links() {
   const [toggle, setToggle] = useState(false);
@@ -14,19 +14,19 @@ export default function Links() {
 
   return (
     <div className="text-secondary flex space-x-4 justify-center items-center">
-      <div className="sm:flex space-x-6 hidden text-xl">
-        <Link className=" transition-colors duration-300 hover:text-white" to="/">
+      <div className="sm:flex space-x-6 hidden text-md">
+        <NavLink className=" transition-colors duration-300 hover:text-white" to="/">
           Home
-        </Link>
-        <Link className=" transition-colors duration-300 hover:text-white" to="/about">
+        </NavLink>
+        <NavLink className=" transition-colors duration-300 hover:text-white" to="/about">
           About
-        </Link>
-        <Link className=" transition-colors duration-300 hover:text-white" to="/service">
+        </NavLink>
+        <NavLink className=" transition-colors duration-300 hover:text-white" to="/service">
           Service
-        </Link>
-        <Link className=" transition-colors duration-300 hover:text-white" to="/event">
+        </NavLink>
+        <NavLink className=" transition-colors duration-300 hover:text-white" to="/event">
           Events
-        </Link>
+        </NavLink>
       </div>
 
       <div
@@ -52,35 +52,35 @@ export default function Links() {
         <div
           style={{ display: `${toggle ? "flex" : "none"}` }}
           className=" flex-col w-full justify-start items-start px-10">
-          <Link onClick={handleClick}
+          <NavLink onClick={handleClick}
             className=" p-2 w-full hover:border-b-2 transition-all duration-200 hover:text-white"
             to="/">
             Home
-          </Link>
-          <Link onClick={handleClick}
+          </NavLink>
+          <NavLink onClick={handleClick}
             className=" p-2 w-full hover:border-b-2 transition-all duration-200 hover:text-white"
             to="/about">
             About
-          </Link>
-          <Link onClick={handleClick}
+          </NavLink>
+          <NavLink onClick={handleClick}
             className=" p-2 w-full hover:border-b-2 transition-all duration-200 hover:text-white"
             to="/service">
             Service
-          </Link>
-          <Link onClick={handleClick}
+          </NavLink>
+          <NavLink onClick={handleClick}
             className=" p-2 w-full hover:border-b-2 transition-all duration-200 hover:text-white"
             to="/event">
             Events
-          </Link>
+          </NavLink>
           <div className="flex space-x-4 justify-end w-full my-4">
-          <Link onClick={handleClick} className="flex flex-none" to={"/login"}> <Button button={"Login"} /></Link>
-          <Link onClick={handleClick} className="flex flex-none" to={"/signIn"}> <Button button={"Sign in"} /></Link>
+          <NavLink onClick={handleClick} className="flex flex-none" to={"/login"}> <Button button={"Login"} /></NavLink>
+          <NavLink onClick={handleClick} className="flex flex-none" to={"/signIn"}> <Button button={"Sign in"} /></NavLink>
           </div>
               </div>
             </div>
             <div className="hidden sm:flex flex-none space-x-4 pr-2">
-          <Link className="flex flex-none " to={"/login"}> <Button button={"Login"} /></Link>
-          <Link className="flex flex-none" to={"/signIn"}> <Button button={"Sign in"} /></Link>
+          <NavLink className="flex flex-none " to={"/login"}> <Button button={"Login"} /></NavLink>
+          <NavLink className="flex flex-none" to={"/signIn"}> <Button button={"Sign in"} /></NavLink>
             </div>
           </div>
   );
