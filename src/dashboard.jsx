@@ -4,10 +4,10 @@ import Map from "./Shammah David/Team";
 import UserCentric from "./Jayteemoney/userCentric";
 
 import Premium from "./Taibat/premium";
+import Invite from "./Rufai/invite";
 export default function Dashboard() {
   return (
     <div className="pt-20">
-
       {/* Aisha Kabir content goes under here */}
 
       {/* Ruben Luka content goes under here */}
@@ -16,9 +16,9 @@ export default function Dashboard() {
       <Premium />
 
       {/* Rufai Usman content goes under here */}
-
+      <Invite />
       {/* Jethro irmiya content goes under here */}
-      <UserCentric/>
+      <UserCentric />
 
       {/* Fatima's content goes under here */}
 
