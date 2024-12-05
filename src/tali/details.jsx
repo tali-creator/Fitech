@@ -5,16 +5,16 @@ export default function Details() {
   const { id } = useParams();
 
   // function to view image
-  const { selectedImage, setSelectedImage } = useState(null);
+  const [viewImage, setviewImage] = useState(null);
 
-  const viewImage = (im) => {
-    setSelectedImage(im);
-  };
+  function handleView(im) {
+    setviewImage(im);
+  }
 
-  const closeImage = () => {
-    setSelectedImage(null);
-  };
-// function to view image ends
+  function closeImage() {
+    setviewImage(null);
+  }
+  // function to view image ends
 
   const details = useLoaderData();
   const user = details.find((u) => u.id === Number(id));
@@ -55,7 +55,7 @@ export default function Details() {
               <div className="flex ">
                 {user.image.map((im, i) => (
                   <img
-                    onClick={() => viewImage(im)}
+                    onClick={() => handleView(im)}
                     className=" w-[200px] h-[250px]"
                     key={i}
                     src={im}
@@ -63,18 +63,18 @@ export default function Details() {
                 ))}
               </div>
             </div>
-            {selectedImage && (
-              <div  
-                className="fixed top-0 left-0 w-[100px] h-[100px] bg-[rbga(0,0,0,0.8) flex justify-center items-center z-90"
-                onClick={closeImage}>
-                <img
-                  src={selectedImage}
-                  className="full-image max-w-4/5 max-h-4/5"
-                  alt=""
-                  onClick={(e) => e.stopPropagation()}
-                />
-              </div>
-            )}
+            {viewImage && (
+        <div
+          onClick={closeImage}
+          className="fixed top-10 left-0 w-full h-full bg-black/70 flex justify-center items-center">
+          <img
+            className="w-[500px] h-[500px] rounded-2xl"
+            src={viewImage}
+            onClick={(e) => e.stopPropagation()}
+            alt=""
+          />
+        </div>
+      )}
           </div>
         </div>
       )}
