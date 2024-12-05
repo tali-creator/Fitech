@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Footer() {
-  const url = "https://fitech-data.vercel.app/data.json";
+  const url = import.meta.env.VITE_DATA_API;
   const [navData, setNaveData] = useState([]);
   useEffect(() => {
     const FetchData = async () => {

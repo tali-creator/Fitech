@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 
 export default function LoginPage() {
-  const url = "https://6749c1828680202966327f1c.mockapi.io/Users";
+  const url = import.meta.env.VITE_USER_API;
 
   const navigate = useNavigate();
   const [isLoader, setLoader] = useState(false);
