@@ -4,6 +4,7 @@ import Footer from "./obed/Footer";
 
 
 export default function RootLayout() {
+  
   return (
     <div className="w-full h-auto font-serif">
     <div className="w-full py-5 px-5 flex flex-col md:px-16 bg-primary mx-auto h-full">

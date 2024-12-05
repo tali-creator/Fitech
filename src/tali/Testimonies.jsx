@@ -3,7 +3,7 @@ import Loading from "./leading";
 import useFetch from "./useFetch";
 
 export default function Testimonies() {
-  const url = "https://fitech-data.vercel.app/data.json";
+  const url = import.meta.env.VITE_DATA_API;
   
   const { data, isPending, error } = useFetch(url);
  

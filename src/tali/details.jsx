@@ -84,7 +84,7 @@ export default function Details() {
 
 export const userDetails = async () => {
   try {
-    const res = await fetch("https://fitech-data.vercel.app/data.json");
+    const res = await fetch(import.meta.env.VITE_DATA_API);
     if (!res.ok) {
       throw Error("Failed To Fetch Data");
     }

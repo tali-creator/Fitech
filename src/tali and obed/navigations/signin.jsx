@@ -25,6 +25,8 @@ export default function SignInPage() {
   const [successMessage, setSuccessMessage] = useState("");
   const [userMessage, setUserMessage] = useState("");
 
+  const url = import.meta.env.VITE_USER_API;
+
   const validateFirstName = () => {
     if (!firstname.trim()) {
       setFirstNameError("Enter a valid first name");
@@ -94,8 +96,6 @@ export default function SignInPage() {
     age,
     gender,
   };
-
-  const url = "https://6749c1828680202966327f1c.mockapi.io/Users";
 
   const signUpUser = async () => {
     setLoading(true);
