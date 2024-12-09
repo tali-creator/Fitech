@@ -18,7 +18,7 @@ export default function Premium() {
               <div className="">
                 <div
                   className="w-[13rem] md:w-[20rem] lg:w-[22rem] lg:h-[32rem] md:h-[30rem] h-[23rem] rotate-130 transform rounded-[50%] left-[50%] top-[40%] -translate-y-[50%] -translate-x-[50%]  border-[2px]
-                border-[hsla(0,0%,100,1)]  absolute"
+                border-[hsla(0,0%,100,1)] absolute"
                 ></div>
 
                 <div className="w-[13rem] h-[23rem] lg:w-[22rem] lg:h-[32rem] md:w-[20rem] md:h-[30rem] rotate-130 rounded-[50%] left-[50%] top-[50%] -translate-y-[50%] -translate-x-[50%] border-[hsla(0,0%,100,1)] border-[2px] absolute"></div>

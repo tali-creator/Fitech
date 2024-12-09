@@ -56,7 +56,7 @@ export default function Details() {
                 {user.image.map((im, i) => (
                   <img
                     onClick={() => handleView(im)}
-                    className=" w-[200px] h-[250px]"
+                    className=" w-[200px] cursor-pointer h-[250px]"
                     key={i}
                     src={im}
                   />
@@ -68,7 +68,7 @@ export default function Details() {
           onClick={closeImage}
           className="fixed top-10 left-0 w-full h-full bg-black/70 flex justify-center items-center">
           <img
-            className="w-[500px] h-[500px] rounded-2xl"
+            className="w-[500px]  h-[500px] rounded-2xl"
             src={viewImage}
             onClick={(e) => e.stopPropagation()}
             alt=""

@@ -46,9 +46,9 @@ export default function Events() {
       {viewImage && (
         <div
           onClick={closeImage}
-          className="fixed top-10  left-0 w-full h-full bg-black/70 flex justify-center items-center">
+          className="fixed top-10   left-0 w-full h-full bg-black/70 flex justify-center items-center">
           <img
-            className="w-[500px] h-[500px] rounded-2xl"
+            className="w-[500px] animate-slide-inn h-[500px] rounded-2xl"
             src={viewImage}
             onClick={(e) => e.stopPropagation()}
             alt=""
@@ -56,12 +56,12 @@ export default function Events() {
         </div>
       )}
       {user && (
-        <div className="flex  flex-wrap w-full gap-2">
+        <div className="flex  flex-wrap w-full  gap-2">
           {user.image.map((im, i) => (
             <img
               onClick={() => handleView(im)}
               style={{}}
-              className=" w-[150px] h-[150px] mx-auto rounded shadow-md hover:transition hover:ease-in-out hover:duration-200"
+              className=" w-[150px] cursor-pointer h-[150px] mx-auto rounded shadow-md hover:transition hover:ease-in-out hover:duration-200"
               key={i}
               src={im}
             />
@@ -73,7 +73,7 @@ export default function Events() {
 }
 
 export const eventData = async () => {
-  const res = await fetch("https://fitech-data.vercel.app/data.json");
+  const res = await fetch(import.meta.env.VITE_DATA_API);
   const data = await res.json();
 
   return data.user;

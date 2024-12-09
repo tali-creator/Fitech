@@ -29,7 +29,7 @@ function Footer() {
             {navList.items.map((item, index) => (
               <li
                 key={index}
-                className="nth-1:[&>a]:text-xl   text-center sm:text-start nth-1:mb-3 "
+                className="nth-1:[&>a]:text-xl   text-center sm:text-start nth-1:mb-3"
               >
                 <a
                   href="{item.url}"

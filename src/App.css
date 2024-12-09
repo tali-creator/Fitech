@@ -57,6 +57,9 @@
 .animate-slide-in {
   animation: slide-in 1s ease-out;
 }
+.animate-slide-inn {
+  animation: slide-in .5s ease-out;
+}
 
 @keyframes slide-in {
   from {
@@ -70,7 +73,7 @@
   }
 }
 
-/* *>*>*{
+/* *>*>*>*{
   outline: 2px solid red;
 } */
 
