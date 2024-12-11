@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "./Loader";
+import { useAuth } from "../../Authentication/ContextProvider";
 
 export default function LoginPage() {
   const url = import.meta.env.VITE_USER_API;
@@ -13,6 +14,7 @@ export default function LoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [userMessage, setUserMessage] = useState("");
+  const { user, setUser } = useAuth();
 
   async function userLogin(e) {
     e.preventDefault();
@@ -20,6 +22,8 @@ export default function LoginPage() {
     setSuccessMessage("");
     setErrorMessage("");
     setUserMessage("");
+
+    
 
     try {
       const response = await fetch(url);
@@ -35,6 +39,9 @@ export default function LoginPage() {
       if (userExist) {
         if (userExist.password === password) {
           setSuccessMessage("Login successfully");
+          setUser(userExist)
+          console.log(user);
+          
         } else {
           setErrorMessage("invalid password");
         }
