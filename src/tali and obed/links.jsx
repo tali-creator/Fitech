@@ -5,7 +5,7 @@ import { useAuth } from "../Authentication/ContextProvider";
 
 export default function Links() {
   const [toggle, setToggle] = useState(false);
-  const { user } = useAuth();
+  const { user, LogOut } = useAuth();
   function handleClick() {
     if (toggle) {
       setToggle(false);
@@ -106,40 +106,46 @@ export default function Links() {
           >
             Events
           </NavLink>
-          {!user && (
-            <div className="flex space-x-4 justify-end w-full my-4">
-              <NavLink
-                onClick={handleClick}
-                className="flex flex-none"
-                to={"/login"}
-              >
-                {" "}
-                <Button button={"Login"} />
-              </NavLink>
-              <NavLink
-                onClick={handleClick}
-                className="flex flex-none"
-                to={"/signIn"}
-              >
-                {" "}
-                <Button button={"Sign in"} />
-              </NavLink>
-            </div>
-          )}
+
+          <div className="flex space-x-4 justify-end w-full my-4">
+            {!user ? (
+              <>
+                <NavLink className="flex flex-none " to={"/login"}>
+                  {" "}
+                  <Button button={"Login"} />
+                </NavLink>
+                <NavLink className="flex flex-none" to={"/signIn"}>
+                  {" "}
+                  <Button button={"Sign in"} />
+                </NavLink>
+              </>
+            ) : (
+              <button className="cursor-pointer" onClick={LogOut}>
+                <Button button={"LogOut"} />
+              </button>
+            )}
+          </div>
         </div>
       </div>
-      {!user && (
-        <div className="hidden sm:flex flex-none space-x-4 pr-2">
-          <NavLink className="flex flex-none " to={"/login"}>
-            {" "}
-            <Button button={"Login"} />
-          </NavLink>
-          <NavLink className="flex flex-none" to={"/signIn"}>
-            {" "}
-            <Button button={"Sign in"} />
-          </NavLink>
-        </div>
-      )}
+
+      <div className="hidden sm:flex flex-none space-x-4 pr-2">
+        {!user ? (
+          <>
+            <NavLink className="flex flex-none " to={"/login"}>
+              {" "}
+              <Button button={"Login"} />
+            </NavLink>
+            <NavLink className="flex flex-none" to={"/signIn"}>
+              {" "}
+              <Button button={"Sign in"} />
+            </NavLink>
+          </>
+        ) : (
+          <button className="cursor-pointer" onClick={LogOut}>
+            <Button button={"LogOut"} />
+          </button>
+        )}
+      </div>
     </div>
   );
 }

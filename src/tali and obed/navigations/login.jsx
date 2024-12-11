@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import { useAuth } from "../../Authentication/ContextProvider";
@@ -16,14 +16,19 @@ export default function LoginPage() {
   const [userMessage, setUserMessage] = useState("");
   const { user, setUser } = useAuth();
 
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+      console.log(user);
+    }
+  }, [user]);
+
   async function userLogin(e) {
     e.preventDefault();
     setLoading(true);
     setSuccessMessage("");
     setErrorMessage("");
     setUserMessage("");
-
-    
 
     try {
       const response = await fetch(url);
@@ -36,12 +41,14 @@ export default function LoginPage() {
       const userExist = getUsers.find((user) => user.email === email);
 
       // set a message to indicate user had and account
+
       if (userExist) {
         if (userExist.password === password) {
           setSuccessMessage("Login successfully");
-          setUser(userExist)
-          console.log(user);
-          
+          setUser(userExist);
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
         } else {
           setErrorMessage("invalid password");
         }
