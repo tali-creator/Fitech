@@ -5,10 +5,14 @@ import UserCentric from "./Jayteemoney/userCentric";
 
 import Premium from "./Taibat/premium";
 import Invite from "./Rufai/invite";
+import FirstPage from "./Aisha Kabir/FirstPage";
+import FirstPageFooter from "./Aisha Kabir/FirstPageFooter";
+
 export default function Dashboard() {
   return (
     <div className="pt-20">
-      {/* Aisha Kabir content goes under here */}
+      <FirstPage/>
+      <FirstPageFooter/>
 
       {/* Ruben Luka content goes under here */}
 
