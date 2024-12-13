@@ -10,7 +10,9 @@ import FirstPageFooter from "./Aisha Kabir/FirstPageFooter";
 
 export default function Dashboard() {
   return (
-    <div className="pt-20">
+      
+    <div className="pt-20 space-y-10">
+      {/* Aisha Kabir content goes under here */}
       <FirstPage/>
       <FirstPageFooter/>
 
