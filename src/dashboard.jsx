@@ -7,6 +7,8 @@ import Premium from "./Taibat/premium";
 import Invite from "./Rufai/invite";
 import FirstPage from "./Aisha Kabir/FirstPage";
 import FirstPageFooter from "./Aisha Kabir/FirstPageFooter";
+import Forcast from "./Habib/Forcast";
+
 
 export default function Dashboard() {
   return (
@@ -27,7 +29,7 @@ export default function Dashboard() {
       <UserCentric />
 
       {/* Fatima's content goes under here */}
-
+      <Forcast/>
       {/* Tali Nanzing Moses content under goes here */}
 
       <Testimonies />
