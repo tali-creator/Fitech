@@ -4,7 +4,7 @@ import { useAuth } from "./ContextProvider"
 function ProtectedRoute({ children }) {
     const { user } = useAuth()
     if (!user) {
-        return <Navigate to="/Login" replace />
+        return <Navigate to="/Login" />
     }
     return children
 }

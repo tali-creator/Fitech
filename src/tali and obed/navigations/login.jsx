@@ -19,7 +19,7 @@ export default function LoginPage() {
   useEffect(() => {
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
-      console.log(user);
+      // console.log(user);
     }
   }, [user]);
 
@@ -36,7 +36,7 @@ export default function LoginPage() {
         throw new Error("failed to connect to server");
       }
       const getUsers = await response.json();
-      console.log(getUsers);
+      // console.log(getUsers);
 
       const userExist = getUsers.find((user) => user.email === email);
 
