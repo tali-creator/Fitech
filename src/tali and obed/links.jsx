@@ -15,6 +15,7 @@ export default function Links() {
   }
 
   return (
+    <div>
     <div className="text-secondary flex space-x-4 justify-center items-center">
       <div className="sm:flex space-x-6 hidden text-md">
         <NavLink
@@ -63,23 +64,20 @@ export default function Links() {
               }`}
             ></div>
             <div
-<<<<<<< HEAD
               
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "hidden"}`}></div>
             <div      
              
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "rotate-45"}`}></div>
-=======
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${
                 toggle && "hidden"
               }`}
-            ></div>
+            </div>
             <div
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${
                 toggle && "rotate-45"
               }`}
             ></div>
->>>>>>> 6e45b1703985425e9b95c4a973390db8190a171f
           </div>
         </div>
         <div

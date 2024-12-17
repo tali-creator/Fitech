@@ -7,9 +7,9 @@ export default function LoginPage() {
   const url1= "https://6749c1828680202966327f1c.mockapi.io/Users";
 const navigate = useNavigate()
  
-  const url = import.meta.env.VITE_USER_API;
+  // const url = import.meta.env.VITE_USER_API;
 
-  const [isLoader, setLoader] = useState(false);
+  // const [isLoader, setLoader] = useState(false);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
