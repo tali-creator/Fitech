@@ -4,7 +4,6 @@ export function Button() {
 
 export function Brief({name , profession}) {
   return (
-    <>
       <div className="flex flex-col min-w-[70px] sm:pl-3 justify-center space-y-1 text-start">
         <span className="font-black text-xs md:text-lg text-white flex-none flex">
           {name}
@@ -13,6 +12,5 @@ export function Brief({name , profession}) {
           {profession}
         </span>
       </div>
-    </>
   );
 }
