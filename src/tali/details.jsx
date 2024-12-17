@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 
+
 export default function Details() {
   const { id } = useParams();
 
@@ -57,7 +58,7 @@ export default function Details() {
                 {user.image.map((im, i) => (
                   <img
                     onClick={() => handleView(im)}
-                    className=" w-[200px] h-[250px]"
+                    className=" w-[200px] cursor-pointer h-[250px]"
                     key={i}
                     src={im}
                   />
@@ -69,7 +70,7 @@ export default function Details() {
           onClick={closeImage}
           className="fixed top-10 left-0 w-full h-full bg-black/70 flex justify-center items-center">
           <img
-            className="w-[500px] h-[500px] rounded-2xl"
+            className="w-[500px]  h-[500px] rounded-2xl"
             src={viewImage}
             onClick={(e) => e.stopPropagation()}
             alt=""
@@ -85,7 +86,7 @@ export default function Details() {
 
 export const userDetails = async () => {
   try {
-    const res = await fetch("https://fitech-data.vercel.app/data.json");
+    const res = await fetch(import.meta.env.VITE_DATA_API);
     if (!res.ok) {
       throw Error("Failed To Fetch Data");
     }

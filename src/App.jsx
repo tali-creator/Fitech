@@ -15,6 +15,7 @@ import Events, { eventData } from "./tali and obed/navigations/event";
 import LoginPage from "./tali and obed/navigations/login";
 import SignInPage from "./tali and obed/navigations/signin";
 import Recovery from "./tali and obed/navigations/recovery";
+import ProtectedRoute from "./Authentication/ProtectedRoute";
 
 //layouts
 import RootLayout from "./RootLayout";
@@ -23,14 +24,30 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       {/* others should put their code in dashboard.jsx */}
-      <Route index element={<Dashboard />}  />
+      <Route index element={<Dashboard />} />
       <Route path="about" element={<About />} />
       <Route path="service" element={<Service />} />
-      <Route path="event" element={<Events />} loader={eventData}  />
+      <Route
+        path="event"
+        element={
+          <ProtectedRoute>
+            <Events />
+          </ProtectedRoute>
+        }
+        loader={eventData}
+      />
       <Route path="login" element={<LoginPage />} />
       <Route path="recovery" element={<Recovery />} />
       <Route path="signIn" element={<SignInPage />} />
-      <Route path="user/:id"  element={<Details />} loader={userDetails} />
+      <Route
+        path="user/:id"
+        element={
+          <ProtectedRoute>
+            <Details />
+          </ProtectedRoute>
+        }
+        loader={userDetails}
+      />
     </Route>
   )
 );

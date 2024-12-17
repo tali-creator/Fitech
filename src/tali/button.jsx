@@ -1,5 +1,5 @@
 export function Button() {
-  return <img className="w-[100px] sm:w-[130px] md:w-[170px] bg-transparent" src={"/Play.svg" }alt="" />;
+  return <img className="w-[100px] cursor-pointer sm:w-[130px] md:w-[170px] bg-transparent" src={"/Play.svg" }alt="" />;
 }
 
 export function Brief({name , profession}) {
