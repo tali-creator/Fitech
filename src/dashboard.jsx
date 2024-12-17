@@ -5,11 +5,11 @@ import UserCentric from "./Jayteemoney/userCentric";
 
 import Premium from "./Taibat/premium";
 import Invite from "./Rufai/invite";
-
 import Automated from "./ruben/Automated";
 import FirstPage from "./Aisha Kabir/FirstPage";
 import FirstPageFooter from "./Aisha Kabir/FirstPageFooter";
 import Forcast from "./Habib/Forcast";
+
 export default function Dashboard() {
   return (
       

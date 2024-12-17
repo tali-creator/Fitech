@@ -1,13 +1,27 @@
+
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+import { useState, useEffect } from "react";
+import { Link, useNavigate,  } from "react-router-dom";
+
 import Loader from "./Loader";
 import { useAuth } from "../../Authentication/ContextProvider";
 
 export default function LoginPage() {
+
   const url = import.meta.env.VITE_USER_API;
 
   const navigate = useNavigate();
   const [isLoader, setLoader] = useState(false);
+
+
+//   const url1= "https://6749c1828680202966327f1c.mockapi.io/Users";
+const navigate = useNavigate()
+ 
+  const url = import.meta.env.VITE_USER_API;
+
+  // const [isLoader, setLoader] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -32,7 +46,7 @@ export default function LoginPage() {
     setUserMessage("");
 
     try {
-      const response = await fetch(url);
+      const response = await fetch(url1);
       if (!response.ok) {
         throw new Error("failed to connect to server");
       }
