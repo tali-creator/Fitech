@@ -1,15 +1,28 @@
+
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 import { useState, useEffect } from "react";
 import { Link, useNavigate,  } from "react-router-dom";
+
 import Loader from "./Loader";
 import { useAuth } from "../../Authentication/ContextProvider";
 
 export default function LoginPage() {
-  const url1= "https://6749c1828680202966327f1c.mockapi.io/Users";
+
+  const url = import.meta.env.VITE_USER_API;
+
+  const navigate = useNavigate();
+  const [isLoader, setLoader] = useState(false);
+
+
+//   const url1= "https://6749c1828680202966327f1c.mockapi.io/Users";
 const navigate = useNavigate()
  
-  // const url = import.meta.env.VITE_USER_API;
+  const url = import.meta.env.VITE_USER_API;
 
   // const [isLoader, setLoader] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +34,7 @@ const navigate = useNavigate()
   useEffect(() => {
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
-      console.log(user);
+      // console.log(user);
     }
   }, [user]);
 
@@ -38,7 +51,7 @@ const navigate = useNavigate()
         throw new Error("failed to connect to server");
       }
       const getUsers = await response.json();
-      console.log(getUsers);
+      // console.log(getUsers);
 
       const userExist = getUsers.find((user) => user.email === email);
 
@@ -47,7 +60,7 @@ const navigate = useNavigate()
       if (userExist) {
         if (userExist.password === password) {
           setSuccessMessage("Login successfully");
-          navigate("/")
+          navigate("/");
           setUser(userExist);
           setTimeout(() => {
             navigate("/");
@@ -150,7 +163,7 @@ const navigate = useNavigate()
           </form>
           <div className="w-full space-x-2 mt-3 space-y-3 ">
             <p className="text-white text-center text-md">
-             Don&#39;t have an account?{" "}
+              Don&#39;t have an account?{" "}
               <Link className="text-tertiary hover:underline" to={"/signIn"}>
                 Sign In{" "}
               </Link>{" "}

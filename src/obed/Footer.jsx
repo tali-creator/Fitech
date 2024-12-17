@@ -2,16 +2,21 @@ import { useEffect, useState } from "react";
 
 function Footer() {
   const url = import.meta.env.VITE_DATA_API;
-  const [navData, setNaveData] = useState([]);
+  const [navData, setNavData] = useState([]);
   useEffect(() => {
     const FetchData = async () => {
+      const saveFooterData = JSON.parse(localStorage.getItem("footerData"));
+      if (saveFooterData) {
+        setNavData(saveFooterData);
+      }
       try {
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error("failed to fetch Data");
         }
         const data = await response.json();
-        setNaveData(data.menu);
+        localStorage.setItem("footerData", JSON.stringify(data.menu));
+        setNavData(data.menu);
       } catch (error) {
         console.error(error);
       }

@@ -64,11 +64,13 @@ export default function Links() {
               }`}
             ></div>
             <div
+
               
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "hidden"}`}></div>
             <div      
              
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "rotate-45"}`}></div>
+
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${
                 toggle && "hidden"
               }`}
@@ -78,6 +80,14 @@ export default function Links() {
                 toggle && "rotate-45"
               }`}
             ></div>
+
+
+            <div
+              className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${
+                toggle && "rotate-45"
+              }`}
+            ></div>
+
           </div>
         </div>
         <div
@@ -126,9 +136,9 @@ export default function Links() {
                 </NavLink>
               </>
             ) : (
-              <button className="cursor-pointer" onClick={LogOut}>
+              <div className="cursor-pointer" onClick={LogOut}>
                 <Button button={"LogOut"} />
-              </button>
+              </div>
             )}
           </div>
         </div>
@@ -147,9 +157,9 @@ export default function Links() {
             </NavLink>
           </>
         ) : (
-          <button className="cursor-pointer" onClick={LogOut}>
+          <div className="cursor-pointer" onClick={LogOut}>
             <Button button={"LogOut"} />
-          </button>
+          </div>
         )}
       </div>
     </div>
