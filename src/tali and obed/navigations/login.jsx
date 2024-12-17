@@ -1,13 +1,24 @@
+<<<<<<< HEAD
+import { useState } from "react";
+import { Link, useNavigate,  } from "react-router-dom";
+=======
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+>>>>>>> 6e45b1703985425e9b95c4a973390db8190a171f
 import Loader from "./Loader";
 import { useAuth } from "../../Authentication/ContextProvider";
 
 export default function LoginPage() {
+<<<<<<< HEAD
+  const url = "https://6749c1828680202966327f1c.mockapi.io/Users";
+const navigate = useNavigate()
+ 
+=======
   const url = import.meta.env.VITE_USER_API;
 
   const navigate = useNavigate();
   const [isLoader, setLoader] = useState(false);
+>>>>>>> 6e45b1703985425e9b95c4a973390db8190a171f
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,6 +56,7 @@ export default function LoginPage() {
       if (userExist) {
         if (userExist.password === password) {
           setSuccessMessage("Login successfully");
+          navigate("/")
           setUser(userExist);
           setTimeout(() => {
             navigate("/");
@@ -147,7 +159,7 @@ export default function LoginPage() {
           </form>
           <div className="w-full space-x-2 mt-3 space-y-3 ">
             <p className="text-white text-center text-md">
-              Don't have an account?{" "}
+             Don&#39;t have an account?{" "}
               <Link className="text-tertiary hover:underline" to={"/signIn"}>
                 Sign In{" "}
               </Link>{" "}

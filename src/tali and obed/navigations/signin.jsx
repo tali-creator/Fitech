@@ -141,7 +141,7 @@ export default function SignInPage() {
           `An error occurred while signing up. status: ${postResponse.statusText}`
         );
       }
-      const data = await postResponse.json();
+      // const data = await postResponse.json();
 
       setFirstName("");
       setLastName("");
@@ -152,6 +152,7 @@ export default function SignInPage() {
       setConfirmPassword("");
 
       setSuccessMessage("Sign-up successful!");
+      navigate("/login")
     } catch (error) {
       console.error(error);
       setErrorMessage("An error occurred while signing up. Please try again.");

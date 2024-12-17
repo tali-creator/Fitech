@@ -14,7 +14,7 @@ export default function Details() {
 
   function closeImage() {
     setviewImage(null);
-  }
+  }details
   // function to view image ends
 
   const details = useLoaderData();
@@ -38,6 +38,7 @@ export default function Details() {
                 <div className="text-stone-600">{user.profession}</div>
               </div>
             </div>
+            
             <div className=" w-full h-full">
               <div className="text-sm text-secondary font-serif py-4">
                 {user.bio}
