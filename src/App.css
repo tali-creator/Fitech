@@ -14,14 +14,14 @@
 
   --scrollbar-width: none; /*  */
   --scrollbar-display: none;
-}
+    }
 
-#scroll-bar {
-  scrollbar-width: none;
-}
-.scroll-bar {
-  scrollbar-width: none;
-}
+    #scroll-bar {
+      scrollbar-width: none;
+    }
+    .scroll-bar {
+      scrollbar-width: none;
+    }
 ::-webkit-scrollbar {
   display: none;
 }
@@ -67,7 +67,9 @@
   to{
     transform: scale(1);
     opacity: 1;
-  }
+  }/* *>*>*{
+  outline: 2px solid red;
+} */
 }
 
 /* *>*>*{

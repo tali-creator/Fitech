@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,  } from "react-router-dom";
 import Loader from "./Loader";
 
 export default function LoginPage() {
   const url = "https://6749c1828680202966327f1c.mockapi.io/Users";
-
-  const navigate = useNavigate();
-  const [isLoader, setLoader] = useState(false);
+const navigate = useNavigate()
+ 
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,6 +34,7 @@ export default function LoginPage() {
       if (userExist) {
         if (userExist.password === password) {
           setSuccessMessage("Login successfully");
+          navigate("/")
         } else {
           setErrorMessage("invalid password");
         }
@@ -133,7 +133,7 @@ export default function LoginPage() {
           </form>
           <div className="w-full space-x-2 mt-3 space-y-3 ">
             <p className="text-white text-center text-md">
-              Don't have an account?{" "}
+             Don&#39;t have an account?{" "}
               <Link className="text-tertiary hover:underline" to={"/signIn"}>
                 Sign In{" "}
               </Link>{" "}

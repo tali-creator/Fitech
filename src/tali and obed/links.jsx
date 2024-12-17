@@ -44,7 +44,7 @@ export default function Links() {
             <div
               
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "hidden"}`}></div>
-            <div
+            <div      
              
               className={`w-7 h-1 transform transition-all hover:bg-white duration-300 bg-secondary rounded ${toggle && "rotate-45"}`}></div>
           </div>

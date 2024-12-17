@@ -5,13 +5,14 @@ import UserCentric from "./Jayteemoney/userCentric";
 
 import Premium from "./Taibat/premium";
 import Invite from "./Rufai/invite";
+import Automated from "./ruben/Automated";
 export default function Dashboard() {
   return (
     <div className="pt-20">
       {/* Aisha Kabir content goes under here */}
 
       {/* Ruben Luka content goes under here */}
-
+      <Automated />
       {/* Taibat Olayinka content under goes here */}
       <Premium />
 
