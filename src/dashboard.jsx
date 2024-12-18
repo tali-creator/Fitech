@@ -10,7 +10,6 @@ import FirstPage from "./Aisha Kabir/FirstPage";
 import FirstPageFooter from "./Aisha Kabir/FirstPageFooter";
 import Forcast from "./Habib/Forcast";
 
-
 export default function Dashboard() {
   return (
       

@@ -1,3 +1,5 @@
+// import useAuth from
+
 export default function Premium() {
   return (
     <div>
