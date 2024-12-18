@@ -6,9 +6,9 @@ import Footer from "./obed/Footer";
 export default function RootLayout() {
 
   return (
-    <div className="w-full relative h-auto font-serif  bg-primary">
-    <div className="w-full relative py-5  px-5 flex flex-col md:px-16  mx-auto h-full">
-      <div className="w-full fixed top-0">
+    <div className="w-full h-auto font-serif">
+    <div className="w-full relative py-5 px-5 flex flex-col md:px-16  bg-primary mx-auto h-full">
+      <div className="w-full relative">
         {/* Tali and Chukwu obed code goes  under here */}
         <NavBar />
       </div>
