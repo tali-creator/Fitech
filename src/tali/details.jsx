@@ -14,7 +14,7 @@ export default function Details() {
 
   function closeImage() {
     setviewImage(null);
-  }details
+  }
   // function to view image ends
 
   const details = useLoaderData();
